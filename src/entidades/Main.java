@@ -8,60 +8,55 @@ public class Main {
     
     public static void main(String[] args){
         
+        //DECANO
         Decano deca1 = new Decano("Carlos", "Garcia", "Decano");
         
+        //ASIGNATURAS
         Asignatura asig1 = new Asignatura("Matematica", 7 , 20);
         Asignatura asig2 = new Asignatura("Programacion", 10, 30);
         Asignatura asig3 = new Asignatura("Base de datos", 4, 10);
         
-        Asignatura array[] = null;
-        array[0] = asig1;
-        array[1] = asig2;
-        array[2] = asig3;
+        Asignatura[] asig = {asig1, asig2, asig3};
         
-        Alumno alu1 = new Alumno("Mauro", "Pavesse", 43041735, array);
-        Alumno alu2 = new Alumno("Sebastian", "Arias", 42145222, array);
-        Alumno alu3 = new Alumno("Malena", "Boe", 44155816, array);
+        //ALUMNOS
+        Asignatura[] array1 = {asig1, asig2};
+        Alumno alu1 = new Alumno("Mauro", "Pavesse", 43041735, array1);
+        Asignatura[] array2 = {asig2, asig3};
+        Alumno alu2 = new Alumno("Sebastian", "Arias", 42145222, array2);
+        Asignatura[] array3 = {asig1, asig3};
+        Alumno alu3 = new Alumno("Malena", "Boe", 44155816, array3);
         
+        Alumno[] alu = {alu1, alu2, alu3};
         
-        array[0] = asig1;
-        array[1] = asig2;
-        array[2] = null;
+        //DOCENTES
+        Docente doce1 = new Docente("Marcela","Turconi","Docente", array1);
+        Docente doce2 = new Docente("Pablo", "Llera", "Docente", array2);
         
-        Docente doce1 = new Docente("Marcela","Turconi","Docente", array);
-        Docente doce2 = new Docente("Pablo", "Llera", "Docente", array);
+        Docente[] doce = {doce1, doce2};
         
         //PUNTO d-
-        alu1.
-
-    }
-    
-    public Asignatura cargarMateria(){
-        Scanner entrada = new Scanner(System.in);
-        Asignatura asig = new Asignatura();
-        System.out.println("Ingrese nombre de materia: ");
-        asig.setNombre(entrada.next());
-        System.out.println("Ingrese nota de materia: ");
-        asig.setNota(entrada.nextDouble());
-        System.out.println("Ingrese horas cursadas: ");
-        asig.setHoras(entrada.nextInt());
-        return asig;
-    }
-    
-    public Asignatura[] cargarArray(){
-        Scanner entrada = new Scanner(System.in);
-        Asignatura[] array = null;
-        Asignatura asig = new Asignatura();
-        for(int i = 0; i<3; i++){
-            System.out.println("Ingrese nombre de materia: ");
-            asig.setNombre(entrada.next());
-            System.out.println("Ingrese nota de materia: ");
-            asig.setNota(entrada.nextDouble());
-            System.out.println("Ingrese horas cursadas: ");
-            asig.setHoras(entrada.nextInt());
-            array[i] = asig;
+        System.out.println("MOSTRANDO PARA CADA ALUMNO QUE ASIGNATURA TIENE APROBADA Y CON QUÉ NOTA\n");
+        for(int i = 0; i<alu.length; i++){
+            System.out.print(alu[i].getNombre()+" "+alu[i].getApellido());
+            alu[i].mostrar_aprobada();
+            System.out.println("=========================================================================");
+        }    
+        
+        //PUNTO e-
+        System.out.println("MOSTRANDO POR CADA ALUMNO SU PROMEDIO Y LAS HORAS CURSADAS\n");
+        for(int i = 0; i<alu.length; i++){
+            System.out.print(alu[i].getNombre()+" "+alu[i].getApellido());
+            System.out.println(alu[i].toString());
+            System.out.println("*************************************************************************");
         }
-        return array;
+        
+        //PUNTO f-
+        System.out.println("MOSTRANDO PARA CADA PERSONA CUANTAS HORAS TRABAJA POR MES Y CUAL ES SU SUELDO");
+        for(int i = 0; i<doce.length; i++){
+            System.out.println(doce[i].toString());
+            System.out.println("-------------------------------------------------------------------------");
+        }
+        System.out.println(deca1.toString());
     }
     
 }

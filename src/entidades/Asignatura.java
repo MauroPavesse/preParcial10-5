@@ -3,35 +3,37 @@ package entidades;
 
 public class Asignatura{
     
+    //ATRIBUTOS
     private String nombre;
     private double nota;
     private int horas_cursadas;
     
-    public Asignatura(){
-        
-        
-    }
-    
+    //CONSTRUCTOR
     public Asignatura(String nombre, double nota, int horas_cursadas){
         this.nombre = nombre;
         this.nota = nota;
         this.horas_cursadas = horas_cursadas;
     }
     
-    public double cuenta_horas_cursada(Horas_facultad horas){
+    public Asignatura(){
+        this(null, 0, 0);
+    }
+    
+    //METODOS
+    public double cuenta_horas_cursada(){
         return 1;
     }
     
     public double getNota(){
-        return 1;
+        return this.nota;
     }
     
     public String getNombre(){
-        return "";
+        return this.nombre;
     }
     
     public int getHoras_cursadas(){
-        return 1;
+        return this.horas_cursadas;
     }
     
     public void setNombre(String nombre){
@@ -44,6 +46,17 @@ public class Asignatura{
     
     public void setHoras(int horas){
         this.horas_cursadas = horas;
+    }
+    
+    //metodo para mostrar esta clase
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();   
+        sb.append("\nNombre: ");
+        sb.append(nombre);
+        sb.append("\nNota: ");
+        sb.append(nota); 
+        return sb.toString();
     }
     
 }
