@@ -21,16 +21,9 @@ public class Docente extends Personal implements Horas_facultad{
 
     
     // Metodos
-    public String getNombre(){
-        return this.getNombre();
-    }
-    
-    public String getApellido(){
-        return this.getApellido();
-    }
-    
     public String toString() {
-        StringBuilder sb = new StringBuilder();   
+        StringBuilder sb = new StringBuilder();
+        sb.append(this.getNombre()+" "+this.getApellido());
         sb.append("\nHoras trabajadas por mes: ");
         sb.append(cantidad_horas_mensuales());
         sb.append("\nSueldo: ");

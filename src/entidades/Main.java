@@ -51,7 +51,7 @@ public class Main {
         }
         
         //PUNTO f-
-        System.out.println("MOSTRANDO PARA CADA PERSONA CUANTAS HORAS TRABAJA POR MES Y CUAL ES SU SUELDO");
+        System.out.println("MOSTRANDO PARA CADA PERSONA CUANTAS HORAS TRABAJA POR MES Y CUAL ES SU SUELDO\n");
         for(int i = 0; i<doce.length; i++){
             System.out.println(doce[i].toString());
             System.out.println("-------------------------------------------------------------------------");
